@@ -29,6 +29,10 @@ You can also just clone this repository directly if you do not want to track you
 git clone https://github.com/Mondotosz/astro-config ~/.config/nvim/lua/user
 ```
 
+```shell
+git clone git@github.com:Mondotosz/astro-config.git ~/.config/nvim/lua/user
+```
+
 #### Start Neovim
 
 ```shell
