@@ -27,4 +27,8 @@ return {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
+  i = {
+    ["<C-Enter>"] = { "<cmd>:call append(line('.'), '')<CR>", desc = "New line below" },
+    ["<C>z"] = { "<cmd> echo 'test'<cr>" },
+  },
 }
