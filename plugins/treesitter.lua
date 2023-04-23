@@ -17,6 +17,10 @@ return {
       "html",
       "dockerfile",
       "css",
+      "jsonc",
+      "bash",
+      "regex",
+      "markdown_inline",
     },
   },
 }

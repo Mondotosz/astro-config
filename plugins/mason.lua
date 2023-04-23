@@ -12,6 +12,8 @@ return {
         "volar",
         "tsserver",
         "docker_compose_language_service",
+        "jsonls",
+        "texlab",
       },
     },
   },
