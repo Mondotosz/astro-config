@@ -14,6 +14,7 @@ return {
         "docker_compose_language_service",
         "jsonls",
         "texlab",
+        "taplo",
       },
     },
   },
