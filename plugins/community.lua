@@ -37,6 +37,10 @@ return {
     },
   },
 
+  -- Terminal
+  { import = "astrocommunity.terminal-integration.flatten-nvim" },
+  { import = "astrocommunity.terminal-integration.vim-tmux-yank" },
+
   -- Utility
   { import = "astrocommunity.utility.noice-nvim" },
 }
