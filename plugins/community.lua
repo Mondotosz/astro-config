@@ -23,6 +23,13 @@ return {
   -- Autocompletion
   { import = "astrocommunity.completion.copilot-lua" },
   {
+    opts = {
+      suggestion = {
+        auto_trigger = false,
+      },
+    },
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = { "zbirenbaum/copilot.lua" },
     opts = function(_, opts)
@@ -53,13 +60,13 @@ return {
         end
       end, { "i", "s" })
 
-      opts.mapping["<C-x>"] = cmp.mapping(function()
-        if copilot.is_visible() then copilot.next() end
-      end)
+      -- opts.mapping["<C-x>"] = cmp.mapping(function()
+      --   if copilot.is_visible() then copilot.next() end
+      -- end)
 
-      opts.mapping["<C-z>"] = cmp.mapping(function()
-        if copilot.is_visible() then copilot.prev() end
-      end)
+      -- opts.mapping["<C-z>"] = cmp.mapping(function()
+      --   if copilot.is_visible() then copilot.prev() end
+      -- end)
 
       return opts
     end,
