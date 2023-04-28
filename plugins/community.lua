@@ -26,7 +26,7 @@ return {
     "copilot.lua",
     opts = {
       suggestion = {
-        auto_trigger = false,
+        debounce = 200,
       },
     },
   },
@@ -34,7 +34,7 @@ return {
     "hrsh7th/nvim-cmp",
     dependencies = { "zbirenbaum/copilot.lua" },
     opts = function(_, opts)
-      local cmp, copilot = require "cmp", require "copilot.suggestion"
+      local cmp = require "cmp"
       local snip_status_ok, luasnip = pcall(require, "luasnip")
 
       if not snip_status_ok then return end
@@ -50,8 +50,6 @@ return {
       opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
-        elseif copilot.is_visible() then
-          copilot.accept()
         elseif luasnip.expand_or_jumpable() then
           luasnip.expand_or_jump()
         elseif has_words_before() then
@@ -60,14 +58,6 @@ return {
           fallback()
         end
       end, { "i", "s" })
-
-      -- opts.mapping["<C-x>"] = cmp.mapping(function()
-      --   if copilot.is_visible() then copilot.next() end
-      -- end)
-
-      -- opts.mapping["<C-z>"] = cmp.mapping(function()
-      --   if copilot.is_visible() then copilot.prev() end
-      -- end)
 
       return opts
     end,
