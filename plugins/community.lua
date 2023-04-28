@@ -23,6 +23,7 @@ return {
   -- Autocompletion
   { import = "astrocommunity.completion.copilot-lua" },
   {
+    "copilot.lua",
     opts = {
       suggestion = {
         auto_trigger = false,
