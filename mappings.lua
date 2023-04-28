@@ -31,4 +31,20 @@ return {
     ["<C-Enter>"] = { "<cmd>:call append(line('.'), '')<CR>", desc = "New line below" },
     ["<C>z"] = { "<cmd> echo 'test'<cr>" },
   },
+  v = {
+    -- use the v key to switch between visual modes
+    ["v"] = {
+      function()
+        local m = vim.api.nvim_get_mode().mode
+        if m == "v" then
+          vim.api.nvim_feedkeys("V", "n", true)
+        elseif m == "V" then
+          vim.api.nvim_feedkeys("\22", "n", true)
+        else
+          vim.api.nvim_feedkeys("v", "n", true)
+        end
+      end,
+      desc = "Switch to visual line mode",
+    },
+  },
 }
